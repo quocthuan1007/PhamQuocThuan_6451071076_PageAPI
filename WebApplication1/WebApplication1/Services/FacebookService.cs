@@ -66,9 +66,21 @@ namespace WebApplication1.Services
 
         public async Task<string> GetPageInsightsAsync(string pageId)
         {
-            // Mặc định lấy insights impressions và engaged_users
-            var response = await _httpClient.GetAsync($"{pageId}/insights?metric=page_impressions,page_engaged_users&access_token={_accessToken}");
-            response.EnsureSuccessStatusCode();
+            // Tạm thời test 1 chỉ số cơ bản và an toàn nhất của Fanpage mới
+            var metrics = "page_post_engagements"; 
+            var period = "day"; 
+            
+            var url = $"{pageId}/insights?metric={metrics}&period={period}&access_token={_accessToken}";
+            
+            var response = await _httpClient.GetAsync(url);
+            
+            // Đọc chi tiết lỗi từ Facebook trả về thay vì dùng EnsureSuccessStatusCode
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                throw new HttpRequestException($"Facebook API Error: {errorContent}");
+            }
+            
             return await response.Content.ReadAsStringAsync();
         }
     }

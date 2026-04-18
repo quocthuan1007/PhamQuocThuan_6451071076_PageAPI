@@ -32,3 +32,4 @@ D:\PhamQuocThuan_6451071076_PageAPI\WebApplication1\WebApplication1\obj\Debug\ne
 D:\PhamQuocThuan_6451071076_PageAPI\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.pdb
 D:\PhamQuocThuan_6451071076_PageAPI\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 D:\PhamQuocThuan_6451071076_PageAPI\WebApplication1\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
+D:\PhamQuocThuan_6451071076_PageAPI\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
